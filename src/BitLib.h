@@ -9,6 +9,6 @@ public:
     ~BitLib();
 
     bool getBit(unsigned char number, unsigned char index);
-    unsigned char getBit(unsigned char number, unsigned char index, unsigned char nobit);
+    unsigned char getBit2Dec(unsigned int number, unsigned char index, unsigned char nobit);
 };
 #endif
