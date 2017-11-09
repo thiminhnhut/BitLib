@@ -22,7 +22,7 @@ public:
     T setBitIndex(T number, unsigned char index, bool bit);
 
     template <typename T1, typename T2>
-    T1 setBitsIndex(T1 number, unsigned char index, T2 number_replace);
+    T1 setBitsIndex(T1 number, unsigned char index, unsigned char nobit, T2 number_replace);
 
     template <typename T>
     unsigned char countBits(T number);
@@ -46,7 +46,7 @@ template <typename T>
 unsigned char BitLib::getBitsIndex2DecChar(T number, unsigned char index, unsigned char nobit) {
     unsigned char value = 0;
     for (unsigned char i = 0; i < nobit; i++) {
-        value += (number >> (index + i) & 0x01) * (1 << (index + i));
+        value += (number >> (index + i) & 0x01) * (1 << i);
     }
     return value;
 }
@@ -55,7 +55,7 @@ template <typename T>
 T BitLib::getBitsIndex2DecInt(T number, unsigned char index, unsigned char nobit) {
     T value = 0;
     for (unsigned char i = 0; i < nobit; i++) {
-        value += (number >> (index + i) & 0x01) * (1 << (index + i));
+        value += (number >> (index + i) & 0x01) * (1 << i);
     }
     return value;
 }
@@ -66,9 +66,8 @@ T BitLib::setBitIndex(T number, unsigned char index, bool bit) {
 }
 
 template <typename T1, typename T2>
-T1 BitLib::setBitsIndex(T1 number, unsigned char index, T2 number_replace) {
-    unsigned char countBitsNumberReplace = countBits(number_replace);
-    for (unsigned char i = 0; i < countBitsNumberReplace; i++) {
+T1 BitLib::setBitsIndex(T1 number, unsigned char index, unsigned char nobit, T2 number_replace) {
+    for (unsigned char i = 0; i < nobit; i++) {
         number = setBitIndex(number, index + i, 0);
     }
     return number | (number_replace << index);
