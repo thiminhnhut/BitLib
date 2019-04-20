@@ -1,0 +1,22 @@
+#######################################
+# Syntax Coloring Map For BitLib
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+BitLib	                KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getBitIndex	            KEYWORD2
+getBitsIndex2DecInt	    KEYWORD2
+getBitsIndex2DecChar	KEYWORD2
+setBitIndex             KEYWORD2
+setBitsIndex            KEYWORD2
+maxSizeBitsChar         KEYWORD2
+maxSizeBitsInt          KEYWORD2
+countBits               KEYWORD2

@@ -1,0 +1,21 @@
+{
+    "name": "BitLib",
+    "keywords": "BitLib",
+    "description": "BitLib Library for Arduino, ESP8266, ESP32",
+    "authors": {
+        "name": "thiminhnhut",
+        "email": "thiminhnhut@gmail.com",
+        "url": "https://github.com/thiminhnhut",
+        "maintainer": true
+    },
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thiminhnhut/BitLib.git"
+    },
+    "export": {
+        "include": "BitLib"
+    },
+    "frameworks": "arduino",
+    "platforms": ["atmelavr", "espressif8266", "espressif32"]
+}

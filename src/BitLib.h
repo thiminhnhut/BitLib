@@ -7,8 +7,6 @@ class BitLib {
 public:
     BitLib();
 
-    ~BitLib();
-
     template <typename T>
     bool getBitIndex(T number, unsigned char index);
 
@@ -24,18 +22,12 @@ public:
     template <typename T1, typename T2>
     T1 setBitsIndex(T1 number, unsigned char index, unsigned char nobit, T2 number_replace);
 
+    unsigned char maxSizeBitsChar(unsigned char nobit);
+    unsigned int maxSizeBitsInt(unsigned char nobit);
+
     template <typename T>
     unsigned char countBits(T number);
 };
-
-
-BitLib::BitLib() {
-
-}
-
-BitLib::~BitLib() {
-
-}
 
 template <typename T>
 bool BitLib::getBitIndex(T number, unsigned char index) {
